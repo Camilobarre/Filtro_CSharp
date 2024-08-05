@@ -24,5 +24,15 @@ namespace FiltroCSharp_CamiloBarreneche.Models
         {
             Console.WriteLine($"El animal {id} - {name} necesita ser castrado.");
         }
+
+        // Método para Hairdress
+        public void Hairdress(string name, string furLength)
+        {
+            Console.Write($"El pelaje del animal {name} es {furLength}.");
+            if (furLength == "largo")
+            {
+                Console.WriteLine($"Necesita ser motilado...");
+            }
+        }
     }
 }
