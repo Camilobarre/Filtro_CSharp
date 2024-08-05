@@ -226,12 +226,12 @@ namespace FiltroCSharp_CamiloBarreneche.Models
             foreach (var dog in Dogs)
             {
                 Console.WriteLine(@$"
-            Id: {dog.GetId}
-            Nombre: {dog.GetName}
-            Fecha de nacimiento: {dog.GetBirthDate}
-            Raza: {dog.GetBreed}
-            Color: {dog.GetColor}
-            Peso en Kg: {dog.GetWeightInKg}
+            Id: {dog.GetId()}
+            Nombre: {dog.GetName()}
+            Fecha de nacimiento: {dog.GetBirthDate()}
+            Raza: {dog.GetBreed()}
+            Color: {dog.GetColor()}
+            Peso en Kg: {dog.GetWeightInKg()}
             Estado de la Cría: {dog.BreedingStatus}
             Temperamento: {dog.Temperament}
             Número del Microchip: {dog.MicrochipNumber}
@@ -241,14 +241,38 @@ namespace FiltroCSharp_CamiloBarreneche.Models
             foreach (var cat in Cats)
             {
                 Console.WriteLine(@$"
-            Id: {cat.GetId}
-            Nombre: {cat.GetName}
-            Fecha de nacimiento: {cat.GetBirthDate}
-            Raza: {cat.GetBreed}
-            Color: {cat.GetColor}
-            Peso en Kg: {cat.GetWeightInKg}
+            Id: {cat.GetId()}
+            Nombre: {cat.GetName()}
+            Fecha de nacimiento: {cat.GetBirthDate()}
+            Raza: {cat.GetBreed()}
+            Color: {cat.GetColor()}
+            Peso en Kg: {cat.GetWeightInKg()}
             Estado de la Cría: {cat.BreedingStatus}
             Longitud de Pelaje: {cat.FurLength}");
+            }
+        }
+
+        // Método para mostrar los animales por su tipo
+        public void ShowAnimals(string Type)
+        {
+            Console.Write("Ingresa el animal que quieras mostrar (Perro o Gato): ");
+            var animal = Console.ReadLine().Trim().ToLower();
+            if (Type != null)
+            {
+                if (Type == "perro")
+                {
+                    foreach (var dog in Dogs)
+                    {
+                        Console.WriteLine($"{dog.GetId()} - Nombre: {dog.GetName()}, Fecha de Nacimienot: {dog.GetBirthDate()}, Raza: {dog.GetBreed()}, Color: {dog.GetColor}, Peso en Kg: {dog.GetWeightInKg}, Estado de la Cría: {dog.BreedingStatus}, Temperamento: {dog.Temperament}, Número del Microchip: {dog.MicrochipNumber}, Volumen de Ladrido: {dog.BarkVolume}, Tipo de Pelaje: {dog.CoatType}");
+                    }
+                }
+                if (Type == "gato")
+                {
+                    foreach (var cat in Cats)
+                    {
+                        Console.WriteLine($"{cat.GetId()} - Nombre: {cat.GetName()}, Fecha de Nacimienot: {cat.GetBirthDate()}, Raza: {cat.GetBreed()}, Color: {cat.GetColor}, Peso en Kg: {cat.GetWeightInKg}, Estado de la Cría: {cat.BreedingStatus}, Longitud de Pelaje: {cat.FurLength}");
+                    }
+                }
             }
         }
     }
