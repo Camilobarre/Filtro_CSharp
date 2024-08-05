@@ -218,5 +218,38 @@ namespace FiltroCSharp_CamiloBarreneche.Models
             Dogs.RemoveAll(i => i.GetId() == id);
             Console.WriteLine($"El gatito con ID {id} ha sido eliminado");
         }
+
+        // Método para mostrar todos los pacientes
+        public void ShowAllPatients()
+        {
+            Console.WriteLine("Listado de pacientes:");
+            foreach (var dog in Dogs)
+            {
+                Console.WriteLine(@$"
+            Id: {dog.GetId}
+            Nombre: {dog.GetName}
+            Fecha de nacimiento: {dog.GetBirthDate}
+            Raza: {dog.GetBreed}
+            Color: {dog.GetColor}
+            Peso en Kg: {dog.GetWeightInKg}
+            Estado de la Cría: {dog.BreedingStatus}
+            Temperamento: {dog.Temperament}
+            Número del Microchip: {dog.MicrochipNumber}
+            Volumen de Ladrido: {dog.BarkVolume}
+            Tipo de Pelaje: {dog.CoatType}");
+            }
+            foreach (var cat in Cats)
+            {
+                Console.WriteLine(@$"
+            Id: {cat.GetId}
+            Nombre: {cat.GetName}
+            Fecha de nacimiento: {cat.GetBirthDate}
+            Raza: {cat.GetBreed}
+            Color: {cat.GetColor}
+            Peso en Kg: {cat.GetWeightInKg}
+            Estado de la Cría: {cat.BreedingStatus}
+            Longitud de Pelaje: {cat.FurLength}");
+            }
+        }
     }
 }
