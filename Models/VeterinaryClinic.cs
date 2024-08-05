@@ -65,5 +65,35 @@ namespace FiltroCSharp_CamiloBarreneche.Models
             Console.Write("Tipo de Pelaje: ");
             string? coatType= Console.ReadLine().Trim().ToLower();
         }
+
+        // Método para guardar un gato
+        public void SaveCat(Cat newCat)
+        {
+            Console.WriteLine("Ingresa los datos del gatito: ");
+
+            Console.Write("Id: ");
+            int id = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("Nombre: ");
+            string? name = Console.ReadLine().Trim().ToLower();
+
+            Console.Write("Fecha de Nacimiento: ");
+            DateOnly birthDate = DateOnly.FromDateTime(Convert.ToDateTime(Console.ReadLine()));
+
+            Console.Write("Raza: ");
+            string? breed=Console.ReadLine().Trim().ToLower();
+
+            Console.Write("Color: ");
+            string? color=Console.ReadLine().Trim().ToLower();
+
+            Console.Write("Peso en KG: ");
+            double? weightInKg =Convert.ToByte(Console.ReadLine());
+
+            Console.Write("Estado de la cría: ");
+            bool? breedingStatus = Convert.ToBoolean(Console.ReadLine());
+
+            Console.Write("Longitud del pelaje: ");
+            string? furLength = Console.ReadLine().Trim().ToLower();
+        }
     }
 }
