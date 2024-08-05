@@ -24,5 +24,11 @@ namespace FiltroCSharp_CamiloBarreneche.Models
             this.BarkVolume = barkVolume;
             this.CoatType = coatType;
         }
+
+        // Método para CastrateAnimal
+        public void CastrateAnimal(int id, string name)
+        {
+            Console.WriteLine($"El animal {id} - {name} necesita ser castrado.");
+        }
     }
 }
