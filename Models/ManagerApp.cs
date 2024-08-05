@@ -96,5 +96,33 @@ namespace FiltroCSharp_CamiloBarreneche.Models
             var newCat = new Cat(id, name, birthDate, breed, color, Convert.ToDouble(weightInKg), Convert.ToBoolean(breedingStatus), furLength);
             return newCat;
         }
+
+        // Método estático para mostar Header
+        public static void ShowHeader()
+        {
+            Console.WriteLine(@$"
+        ==============================================================================
+        |                            Veterinaria RIWI                                |
+        ==============================================================================
+        ");
+        }
+
+        // Método estático para mostar Footer
+        public static void ShowFooter()
+        {
+            Console.WriteLine(@$"
+        ==============================================================================
+        |                          Gracias por tu visita                             |
+        ==============================================================================
+        ");
+        }
+
+        // Método estático para mostar Separador
+        public static void ShowSeparator()
+        {
+            Console.WriteLine(@$"
+        ==============================================================================
+        ");
+        }
     }
 }
