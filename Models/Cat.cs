@@ -9,6 +9,14 @@ namespace FiltroCSharp_CamiloBarreneche.Models
     {
         // Se crean las propiedades de la clase Cat
         public bool BreedingStatus { get; set; }
-        public string FurLenght { get; set; }
+        public string FurLength { get; set; }
+
+        // Constructor de Cat como herencia de Animal
+        public Cat(int id, string name, DateOnly birthDate, string breed, string color, double weightInKg, bool breedingStatus, string furLength)
+        : base(id, name, birthDate, breed, color, weightInKg)
+        {
+            this.BreedingStatus = breedingStatus;
+            this.FurLength =furLength;
+        }
     }
 }
