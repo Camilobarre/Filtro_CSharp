@@ -44,7 +44,7 @@ namespace FiltroCSharp_CamiloBarreneche.Models
         public void SetWeightInKg(double value) => WeightInKg = value;
 
         // Método para mostrar la información (Abstract)
-        public abstract void Showinformacion();
+        public abstract void ShowInformacion();
 
         // Método para hacer una revisión básica
         public void BasicReview(){
