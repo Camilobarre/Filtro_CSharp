@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Data.Common;
 using System.IO.Compression;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -30,6 +31,7 @@ namespace FiltroCSharp_CamiloBarreneche.Models
         }
 
         // Métodos para obtener las propiedades de la clase Animal
+        public int GetId()=> Id;
         public string GetName() => Name;
         public DateOnly GetBirthDate() => BirthDate;
         public string GetBreed() => Breed;
@@ -37,6 +39,7 @@ namespace FiltroCSharp_CamiloBarreneche.Models
         public double GetWeightInKg() => WeightInKg;
 
         // Método para establecer los valores de las propiedades
+        public void SetId(int value) => Id = value;
         public void SetName(string value) => Name = value;
         public void SetBirthDate(DateOnly value) => BirthDate = value;
         public void SetBreed(string value) => Breed = value;
