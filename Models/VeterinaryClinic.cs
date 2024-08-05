@@ -104,7 +104,7 @@ namespace FiltroCSharp_CamiloBarreneche.Models
             Dog? IdFound = Dogs.Find(i => i.GetId() == IdEncontrada);
             if (IdFound != null)
             {
-                Console.WriteLine("Ingresa los nuevos datos del perrito");
+                Console.WriteLine("Ingresa los nuevos datos del perrito: ");
 
                 Console.Write("Id (Deja en blanco para no cambiar): ");
                 var input1 = Convert.ToInt32(Console.ReadLine().Trim().ToLower());
@@ -149,6 +149,54 @@ namespace FiltroCSharp_CamiloBarreneche.Models
                 Console.Write("Tipo de Pelaje (Deja en blanco para no cambiar: ");
                 var input11 = Console.ReadLine().Trim().ToLower();
                 if (!string.IsNullOrEmpty(input11)) coatType = input11;
+            }
+            else
+            {
+                Console.WriteLine("Perrito no encontrado.");
+            }
+        }
+
+        // Método para actualizar un gato
+        public void UpdateCat(Cat cat, bool breadingStatus, string furLength)
+        {
+            Console.Write("Ingresa el Id del gato a editar: ");
+            var IdEncontrada = Convert.ToInt32(Console.ReadLine().Trim().ToLower());
+            Cat? IdFound = Cats.Find(i => i.GetId() == IdEncontrada);
+            if (IdFound != null)
+            {
+                Console.WriteLine("Ingresa los nuevos datos del gatito: ");
+
+                Console.Write("Id (Deja en blanco para no cambiar): ");
+                var input1 = Convert.ToInt32(Console.ReadLine().Trim().ToLower());
+                if (!string.IsNullOrEmpty(Convert.ToString(input1))) IdFound.SetId(input1);
+
+                Console.Write("Nombre (Deja en blanco para no cambiar): ");
+                var input2 = Console.ReadLine().Trim().ToLower();
+                if (!string.IsNullOrEmpty(input2)) IdFound.SetName(input2);
+
+                Console.Write("Fecha de Nacimiento (Deja en blanco para no cambiar): ");
+                var input3 = DateOnly.FromDateTime(Convert.ToDateTime(Console.ReadLine()));
+                if (!string.IsNullOrEmpty(Convert.ToString(input3))) IdFound.SetBirthDate(input3);
+
+                Console.Write("Raza (Deja en blanco para no cambiar): ");
+                var input4 = Console.ReadLine().Trim().ToLower();
+                if (!string.IsNullOrEmpty(input4)) IdFound.SetBreed(input4);
+
+                Console.Write("Color (Deja en blanco para no cambiar): ");
+                var input5 = Console.ReadLine().Trim().ToLower();
+                if (!string.IsNullOrEmpty(input5)) IdFound.SetColor(input5);
+
+                Console.Write("Peso en Kg (Deja en blanco para no cambiar): ");
+                var input6 = Convert.ToDouble(Console.ReadLine().Trim().ToLower());
+                if (!string.IsNullOrEmpty(Convert.ToString(input6))) IdFound.SetWeightInKg(input6);
+
+                Console.Write("Estado de la Cría (Deja en blanco para no cambiar): ");
+                var input7 = Convert.ToBoolean(Console.ReadLine().Trim().ToLower());
+                if (!string.IsNullOrEmpty(Convert.ToString(input7))) breadingStatus = input7;
+
+                Console.Write("Longitgud de Pelaje (Deja en blanco para no cambiar: ");
+                var input8 = Console.ReadLine().Trim().ToLower();
+                if (!string.IsNullOrEmpty(input8)) furLength = input8;
             }
             else
             {
