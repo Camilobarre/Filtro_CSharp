@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 
 namespace FiltroCSharp_CamiloBarreneche.Models
@@ -202,6 +203,20 @@ namespace FiltroCSharp_CamiloBarreneche.Models
             {
                 Console.WriteLine("Perrito no encontrado.");
             }
+        }
+
+        // Método para eliminar un perro
+        public void DeleteDog(int id)
+        {
+            Dogs.RemoveAll(i => i.GetId() == id);
+            Console.WriteLine($"El perrito con ID {id} ha sido eliminado");
+        }
+
+        // Método para eliminar un gato
+        public void DeleteCat(int id)
+        {
+            Dogs.RemoveAll(i => i.GetId() == id);
+            Console.WriteLine($"El gatito con ID {id} ha sido eliminado");
         }
     }
 }
