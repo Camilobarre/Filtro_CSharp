@@ -2,7 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.IO.Compression;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
+using Microsoft.VisualBasic;
 
 namespace FiltroCSharp_CamiloBarreneche.Models
 {
@@ -43,6 +45,13 @@ namespace FiltroCSharp_CamiloBarreneche.Models
 
         // Método para mostrar la información (Abstract)
         public abstract void Showinformacion();
-        
+
+        // Método para hacer una revisión básica
+        public void BasicReview(){
+            Console.WriteLine("Escribe tu review del animal: ");
+            var review = Console.ReadLine();
+            Console.WriteLine($"El animal {Name} presenta el siguiente review: ");
+        }
+
     }
 }
