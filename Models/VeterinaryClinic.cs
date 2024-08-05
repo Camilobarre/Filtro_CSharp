@@ -12,5 +12,19 @@ namespace FiltroCSharp_CamiloBarreneche.Models
         public string? Address { get; set; }
         public List<Dog> Dogs { get; set; }
         public List<Cat> Cats { get; set; }
+
+        // Constructor de VeterinayClinic
+        public VeterinaryClinic(string name, string address)
+        {
+            this.Name = name;
+            this.Address = address;
+        }
+
+        // Constructor de VeterinaryClinic con listas
+        public VeterinaryClinic()
+        {
+            this.Dogs = new List<Dog>();
+            this.Cats = new List<Cat>();
+        }
     }
 }
