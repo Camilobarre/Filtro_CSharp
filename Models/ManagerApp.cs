@@ -124,5 +124,32 @@ namespace FiltroCSharp_CamiloBarreneche.Models
         ==============================================================================
         ");
         }
+
+        // Método para imprimir un menú
+        public static void PrintMenu()
+        {
+            Console.WriteLine(@$"
+        |                             0.  Salir del Menú                              |
+        |                             1.  Agregar Perro                               |
+        |                             2.  Mostrar Perros                              |
+        |                             3.  Editar Perro                                |
+        |                             4.  Eliminar Perro                              |
+        |                             5.  Agregar Gato                                |
+        |                             6.  Mostrar Gatos                               | 
+        |                             7.  Editar Gato                                 |
+        |                             8.  Eliminar Gato                               |
+        |                             9.  Mostrar Pacientes                           |
+        |                             10. Mostrar por Tipo                            |
+        |                             11. Buscar por ID                               |
+        ");
+            Console.Write("Selecciona una opción: ");
+        }
+
+        //Método para pausar el menú
+        public static void StopMenu()
+        {
+            Console.WriteLine("Presiona una tecla para continuar...");
+            Console.ReadKey();
+        }
     }
 }

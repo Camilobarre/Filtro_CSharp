@@ -23,7 +23,7 @@ namespace FiltroCSharp_CamiloBarreneche.Models
             this.Cats = new List<Cat>();
         }
 
-        // Constructor de VeterinaryClinic con listas
+        // Constructor vacío de VeterinaryClinic
         public VeterinaryClinic()
         {
         }
@@ -185,6 +185,7 @@ namespace FiltroCSharp_CamiloBarreneche.Models
             Volumen de Ladrido: {dog.BarkVolume}
             Tipo de Pelaje: {dog.CoatType}");
             }
+            ManagerApp.ShowSeparator();
             foreach (var cat in Cats)
             {
                 Console.WriteLine(@$"
