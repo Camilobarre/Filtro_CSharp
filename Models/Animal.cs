@@ -50,8 +50,13 @@ namespace FiltroCSharp_CamiloBarreneche.Models
         public void BasicReview(){
             Console.WriteLine("Escribe tu review del animal: ");
             var review = Console.ReadLine();
-            Console.WriteLine($"El animal {Name} presenta el siguiente review: ");
+            Console.WriteLine($"El animal {Name} presenta el siguiente review: {review}");
         }
 
+        // Método para calcular la edad en meses
+        public void CalculateAgeInMonth(int birthDate){
+            int AgeInMonth= DateTime.Now.Month - BirthDate.Month;
+            Console.WriteLine($"El animal {Name} tiene {AgeInMonth} meses.");
+        }
     }
 }
