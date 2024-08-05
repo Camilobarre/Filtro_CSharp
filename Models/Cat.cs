@@ -16,7 +16,13 @@ namespace FiltroCSharp_CamiloBarreneche.Models
         : base(id, name, birthDate, breed, color, weightInKg)
         {
             this.BreedingStatus = breedingStatus;
-            this.FurLength =furLength;
+            this.FurLength = furLength;
+        }
+
+        // Método para CastrateAnimal
+        public void CastrateAnimal(int id, string name)
+        {
+            Console.WriteLine($"El animal {id} - {name} necesita ser castrado.");
         }
     }
 }
