@@ -34,5 +34,21 @@ namespace FiltroCSharp_CamiloBarreneche.Models
                 Console.WriteLine($"Necesita ser motilado...");
             }
         }
+
+        // Método para mostrar la información
+        public override void ShowInformacion()
+        {
+            Console.WriteLine(@$"
+            ------------Datos del paciente------------
+            Id: {Id}
+            Nombre: {Name}
+            Fecha de nacimiento: {BirthDate}
+            Raza: {Breed}
+            Color: {Color}
+            Peso en Kg: {WeightInKg}
+            Estado de la Cría: {BreedingStatus}
+            Longitud del Pelaje: {FurLength}
+            ");
+        }
     }
 }
