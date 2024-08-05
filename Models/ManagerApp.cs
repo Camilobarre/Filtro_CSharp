@@ -7,95 +7,82 @@ namespace FiltroCSharp_CamiloBarreneche.Models
 {
     public class ManagerApp
     {
-        // Método estático para crear un perro
+        //metodo para crear un perro
         public static Dog CreateDog()
         {
-            Console.WriteLine("Ingresa los datos del perrito: ");
+            // Método para solicitar información del Perro
+            Console.WriteLine("Datos del perro");
 
-            Console.Write("Id: ");
+            Console.WriteLine("Ingrese el Id: ");
             int id = Convert.ToInt32(Console.ReadLine());
-
-            Console.Write("Nombre: ");
-            string? name = Console.ReadLine().Trim().ToLower();
-
-            Console.Write("Fecha de Nacimiento: ");
-            DateOnly birthDate = DateOnly.FromDateTime(Convert.ToDateTime(Console.ReadLine()));
-
-            Console.Write("Raza: ");
-            string? breed = Console.ReadLine().Trim().ToLower();
-
-            Console.Write("Color: ");
-            string? color = Console.ReadLine().Trim().ToLower();
-
-            Console.Write("Peso en KG: ");
-            double? weightInKg = Convert.ToByte(Console.ReadLine());
-
-            Console.Write("Estado de la cría: ");
-            bool? breedingStatus = Convert.ToBoolean(Console.ReadLine());
-
-            Console.Write("Temperamento (Timido, Normal, Agresivo): ");
-            string? temperament = Console.ReadLine().Trim().ToLower();
-
-            Console.Write("Número de Microchip: ");
-            string? microchipNumber = Console.ReadLine().Trim().ToLower();
-
-            Console.Write("Volumen de Ladrido: ");
-            string? barkVolume = Console.ReadLine().Trim().ToLower();
-
-            Console.Write("Tipo de Pelaje (sin pelo, pelo corto, pelo mediano, pelo largo): ");
-            string? coatType = Console.ReadLine().Trim().ToLower();
-
-            if (temperament == "Timido" || temperament == "Normal" || temperament == "Agresivo")
+            Console.WriteLine("Ingrese el nombre: ");
+            string name = Console.ReadLine();
+            Console.WriteLine("Ingrese la fecha de nacimiento (YYYY-MM-DD): ");
+            DateTime birthdate = Convert.ToDateTime(Console.ReadLine());
+            DateOnly birthdate1 = DateOnly.FromDateTime(birthdate);
+            Console.WriteLine("Ingrese el tipo de raza: ");
+            string breed = Console.ReadLine();
+            Console.WriteLine("Ingrese el color: ");
+            string color = Console.ReadLine();
+            Console.WriteLine("Ingrese el peso en kg: ");
+            double weightInKg = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Ingrese si el perro se encuentra en estado de castración (true/false): ");
+            bool breedingStatus = Convert.ToBoolean(Console.ReadLine());
+            Console.WriteLine("Ingrese el tipo de temperamento(Tímido, Normal o Agresivo.): ".ToLower());
+            string temperament = Console.ReadLine().ToLower();  // se convierte a minúsculas para comparar con los valores posibles.
+            if (temperament != "timido" && temperament != "normal" && temperament != "agresivo".ToLower()) // se realizan validaciones con un ifelse
             {
-                Console.WriteLine("Ingresa el temperamento de tu perro (Timido, Normal, Agresivo) => ");
-                var newdog = new Dog(id, name, birthDate, breed, color, Convert.ToDouble(weightInKg), Convert.ToBoolean(breedingStatus), temperament, microchipNumber, barkVolume, coatType);
-                return newdog;
-            }
-            else if (coatType == "sin pelo" || coatType == "pelo corto" || coatType == "pelo mediano" || coatType == "pelo largo")
-            {
-                Console.WriteLine("Ingresa el tipo de pelaje de tu perro (sin pelo, pelo corto, pelo mediano, pelo largo) => ");
-                var newdog = new Dog(id, name, birthDate, breed, color, Convert.ToDouble(weightInKg), Convert.ToBoolean(breedingStatus), temperament, microchipNumber, barkVolume, coatType);
-                return newdog;
-            }
-            else
-            {
-                Console.WriteLine("No se pudo crear el perro, vuelve a intentarlo.");
+                Console.WriteLine("Opcion inválida.");
                 return CreateDog();
             }
+
+            Console.WriteLine("Ingrese el número de microchip");
+            string microShipNumber = Console.ReadLine();
+            Console.WriteLine("Ingrese que tan fuerte ladra".ToLower());
+            string barkVolume = Console.ReadLine();
+            Console.WriteLine("Ingrese el tipo de pelo (Sin pelo, Pelo corto, Pelo mediano, Pelo largo.)".ToLower());
+            string coatType = Console.ReadLine();
+            if (coatType != "sin pelo" && coatType != "pelo corto" && coatType != "pelo mediano" && coatType != "pelo largo".ToLower())
+            {
+                Console.WriteLine("Opcion inválida");
+                return CreateDog();
+            }
+
+            var newDog = new Dog(id, name, birthdate1, breed, color, weightInKg, breedingStatus, temperament, microShipNumber, barkVolume, coatType);
+
+            return newDog;
         }
 
-        // Método estático para crear un gato
         public static Cat CreateCat()
         {
-            Console.WriteLine("Ingresa los datos del gatito: ");
+            Console.WriteLine("Por favor ingrese los siguientes datos del gato");
 
-            Console.Write("Id: ");
+            Console.WriteLine("Ingrese el Id: ");
             int id = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Ingrese el nombre");
+            string name = Console.ReadLine();
+            Console.WriteLine("Ingrese la fecha de nacimiento (YYYY-MM-DD): ");
+            DateOnly birthdate = DateOnly.Parse(Console.ReadLine());
+            Console.WriteLine("Ingrese el tipo de raza: ");
+            string breed = Console.ReadLine();
+            Console.WriteLine("Ingrese el color: ");
+            string color = Console.ReadLine();
+            Console.WriteLine("Ingrese el peso en kg: ");
+            double weightInKg = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Ingrese si el gato se encuentra en estado de castración (true/false): ");
+            bool breedingStatus = Convert.ToBoolean(Console.ReadLine());
+            Console.WriteLine("Ingrese la longitud del pelo (Sin pelo, Pelo corto, Pelo mediano, Pelo largo): ");
+            string furLenght = Console.ReadLine();
+            if (furLenght != "sin" && furLenght != "corto" && furLenght != "mediano" && furLenght != "largo".ToLower())
+            {
+                Console.WriteLine("Opcion inválida");
+                return CreateCat();
 
-            Console.Write("Nombre: ");
-            string? name = Console.ReadLine().Trim().ToLower();
-
-            Console.Write("Fecha de Nacimiento: ");
-            DateOnly birthDate = DateOnly.FromDateTime(Convert.ToDateTime(Console.ReadLine()));
-
-            Console.Write("Raza: ");
-            string? breed = Console.ReadLine().Trim().ToLower();
-
-            Console.Write("Color: ");
-            string? color = Console.ReadLine().Trim().ToLower();
-
-            Console.Write("Peso en KG: ");
-            double? weightInKg = Convert.ToByte(Console.ReadLine());
-
-            Console.Write("Estado de la cría: ");
-            bool? breedingStatus = Convert.ToBoolean(Console.ReadLine());
-
-            Console.Write("Longitud del pelaje: ");
-            string furLength = Console.ReadLine().Trim().ToLower();
-
-            var newCat = new Cat(id, name, birthDate, breed, color, Convert.ToDouble(weightInKg), Convert.ToBoolean(breedingStatus), furLength);
+            }// se realizan validaciones con un ifelse para validar que el usuario este ingresando bien los datos
+            var newCat = new Cat(id, name, birthdate, breed, color, weightInKg, breedingStatus, furLenght);
             return newCat;
         }
+
 
         // Método estático para mostar Header
         public static void ShowHeader()

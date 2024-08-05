@@ -44,20 +44,18 @@ namespace FiltroCSharp_CamiloBarreneche.Models
         // Método para ShowInformacion como abstracto de Animal
         public override void ShowInformacion()
         {
-            Console.WriteLine(@$"
-            ------------Datos del paciente------------
-            Id: {Id}
-            Nombre: {Name}
-            Fecha de nacimiento: {BirthDate}
-            Raza: {Breed}
-            Color: {Color}
-            Peso en Kg: {WeightInKg}
-            Estado de la Cría: {BreedingStatus}
-            Temperamento: {Temperament}
-            Número del Microchip: {MicrochipNumber}
-            Volumen de Ladrido: {BarkVolume}
-            Tipo de Pelaje: {CoatType}
-            ");
+            Console.WriteLine($"Id: {Id}");
+            Console.WriteLine($"Nombre: {Name}");
+            Console.WriteLine($"Fecha de Nacimiento: {Birthdate}");
+            Console.WriteLine($"Raza: {Breed}");
+            Console.WriteLine($"Color: {Color}");
+            Console.WriteLine($"Peso en KG: {WeightInKg}");
+            Console.WriteLine($"Estado de la Cría: {BreedingStatus}");
+            Console.WriteLine($"Temperamento: {Temperament}");
+            Console.WriteLine($"Número de Microchip: {MicrochipNumber}");
+            Console.WriteLine($"Volumen de Ladrido: {BarkVolume}");
+            Console.WriteLine($"Tipo de Pelaje: {CoatType}");
+            Console.WriteLine();
         }
     }
 }

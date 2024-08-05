@@ -11,55 +11,66 @@ namespace FiltroCSharp_CamiloBarreneche.Models
 {
     public abstract class Animal
     {
-        // Se crea las propiedades de la clase Animal
+        //se crean atributos protegidos
         protected int Id { get; set; }
         protected string Name { get; set; }
-        protected DateOnly BirthDate { get; set; }
+        protected DateOnly Birthdate { get; set; }
         protected string Breed { get; set; }
         protected string Color { get; set; }
         protected double WeightInKg { get; set; }
 
-        // Constructor de la clase Animal
-        public Animal(int id, string name, DateOnly birthDate, string breed, string color, double weightInKg)
+        //constructor de la clase
+
+        public Animal(int id, string name, DateOnly birthdate, string breed, string color, double weightInKg)
         {
-            this.Id = id;
-            this.Name = name;
-            this.BirthDate = birthDate;
-            this.Breed = breed;
-            this.Color = color;
-            this.WeightInKg = weightInKg;
+            Id = id;
+            Name = name;
+            Birthdate = birthdate;
+            Breed = breed;
+            Color = color;
+            WeightInKg = weightInKg;
         }
 
-        // Métodos para obtener las propiedades de la clase Animal
-        public int GetId()=> Id;
-        public string GetName() => Name;
-        public DateOnly GetBirthDate() => BirthDate;
-        public string GetBreed() => Breed;
-        public string GetColor() => Color;
-        public double GetWeightInKg() => WeightInKg;
-
-        // Método para establecer los valores de las propiedades
-        public void SetId(int value) => Id = value;
-        public void SetName(string value) => Name = value;
-        public void SetBirthDate(DateOnly value) => BirthDate = value;
-        public void SetBreed(string value) => Breed = value;
-        public void SetColor(string value) => Color = value;
-        public void SetWeightInKg(double value) => WeightInKg = value;
-
-        // Método para mostrar la información (Abstract)
+        // Método para mostrar información de la mascota
         public abstract void ShowInformacion();
 
-        // Método para hacer una revisión básica
-        public void BasicReview(){
-            Console.WriteLine("Escribe tu review del animal: ");
-            var review = Console.ReadLine();
-            Console.WriteLine($"El animal {Name} presenta el siguiente review: {review}");
+        // Mostrar información breve de la mascota
+        protected void BasicReview()
+        {
+            Console.WriteLine("Ingresa una descripcion breve de como ingresó su mascota a la veterinaria");
+            string review = Console.ReadLine();
+
+            Console.WriteLine($"La descripcion de la mascota al ingresar a la veterinaria: {review}");
+
+        }
+        // Calcular la edad en meses
+        protected int CalculateAgeInMonths()
+        {
+            DateTime CurrentDate = DateTime.Now;
+            int age = (CurrentDate.Year - Birthdate.Year) * 12 + CurrentDate.Month - CurrentDate.Month;
+            return age;
         }
 
-        // Método para calcular la edad en meses
-        public void CalculateAgeInMonth(int birthDate){
-            int AgeInMonth= DateTime.Now.Month - BirthDate.Month;
-            Console.WriteLine($"El animal {Name} tiene {AgeInMonth} meses.");
+        public int GetId()
+        {
+            return Id;
+        }
+        public string GetName()
+        {
+            return Name;
+        }
+
+        public double GetWeightInKg()
+        {
+            return WeightInKg;
+        }
+        public void SetNombre(string nuevoNombre)
+        {
+            Name = nuevoNombre;
+        }
+        public void SetWeightInKg(double weightInKg)
+        {
+            WeightInKg = weightInKg;
         }
     }
 }

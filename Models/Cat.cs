@@ -7,48 +7,54 @@ namespace FiltroCSharp_CamiloBarreneche.Models
 {
     public class Cat : Animal
     {
-        // Se crean las propiedades de la clase Cat
+        // Propiedades de Cat
         public bool BreedingStatus { get; set; }
-        public string FurLength { get; set; }
+        public string FurLenght { get; set; }
 
-        // Constructor de Cat como herencia de Animal
-        public Cat(int id, string name, DateOnly birthDate, string breed, string color, double weightInKg, bool breedingStatus, string furLength)
-        : base(id, name, birthDate, breed, color, weightInKg)
+        // Constructor de la clase Cat
+        public Cat(int id, string name, DateOnly birthDate, string breed, string color, double weightInKg, bool breedingStatus, string furLenght) : base(id, name, birthDate, breed, color, weightInKg)
         {
             this.BreedingStatus = breedingStatus;
-            this.FurLength = furLength;
+            this.FurLenght = furLenght;
         }
-
-        // Método para CastrateAnimal
-        public void CastrateAnimal(int id, string name)
-        {
-            Console.WriteLine($"El animal {id} - {name} necesita ser castrado.");
-        }
-
-        // Método para Hairdress
-        public void Hairdress(string name, string furLength)
-        {
-            Console.Write($"El pelaje del animal {name} es {furLength}.");
-            if (furLength == "largo")
-            {
-                Console.WriteLine($"Necesita ser motilado...");
-            }
-        }
-
-        // Método para mostrar la información
+        // Método de herencia de la clase animal
         public override void ShowInformacion()
         {
             Console.WriteLine(@$"
-            ------------Datos del paciente------------
+            Information of animal
             Id: {Id}
-            Nombre: {Name}
-            Fecha de nacimiento: {BirthDate}
-            Raza: {Breed}
+            Name: {Name}
+            Breed: {Breed}
             Color: {Color}
-            Peso en Kg: {WeightInKg}
-            Estado de la Cría: {BreedingStatus}
-            Longitud del Pelaje: {FurLength}
-            ");
+            Weight: {WeightInKg}kg
+            Age: {CalculateAgeInMonths} meses
+            Breeding Status: {BreedingStatus}
+            Fur Lenght: {FurLenght} cm");
+        }
+        // Método para validar si el animal se castró
+        public void CastrateAnimal()
+        {
+            if (BreedingStatus == false)
+            {
+                Console.WriteLine("El animal YA se encuentra castrado, no se puede reproducir");
+            }
+            else
+            {
+                Console.WriteLine("El animal aun NO se encuentra castrado, aun se puede reproducir");
+                BreedingStatus = false;
+            }
+        }
+        // Método para validar si el animal necesita corte
+        public void Hairdress()
+        {
+            if (FurLenght == "Sin pelo")
+            {
+                Console.WriteLine("No se puede peluquear al gato ya que  no tiene pelaje");
+            }
+            else
+            {
+                Console.WriteLine("Se peluqieó al gato");
+            }
         }
     }
 }
