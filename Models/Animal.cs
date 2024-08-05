@@ -40,5 +40,9 @@ namespace FiltroCSharp_CamiloBarreneche.Models
         public void SetBreed(string value) => Breed = value;
         public void SetColor(string value) => Color = value;
         public void SetWeightInKg(double value) => WeightInKg = value;
+
+        // Método para mostrar la información (Abstract)
+        public abstract void Showinformacion();
+        
     }
 }
