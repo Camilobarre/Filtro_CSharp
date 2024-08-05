@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace FiltroCSharp_CamiloBarreneche.Models
 {
     public abstract class Animal
-    {   
+    {
         // Se crea las propiedades de la clase Animal
         protected int Id { get; set; }
         protected string Name { get; set; }
@@ -26,5 +26,19 @@ namespace FiltroCSharp_CamiloBarreneche.Models
             this.Color = color;
             this.WeightInKg = weightInKg;
         }
+
+        // Métodos para obtener las propiedades de la clase Animal
+        public string GetName() => Name;
+        public DateOnly GetBirthDate() => BirthDate;
+        public string GetBreed() => Breed;
+        public string GetColor() => Color;
+        public double GetWeightInKg() => WeightInKg;
+
+        // Método para establecer los valores de las propiedades
+        public void SetName(string value) => Name = value;
+        public void SetBirthDate(DateOnly value) => BirthDate = value;
+        public void SetBreed(string value) => Breed = value;
+        public void SetColor(string value) => Color = value;
+        public void SetWeightInKg(double value) => WeightInKg = value;
     }
 }
