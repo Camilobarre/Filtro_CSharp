@@ -41,10 +41,11 @@ namespace FiltroCSharp_CamiloBarreneche.Models
             }
         }
 
+        // Método para ShowInformacion como abstracto de Animal
         public override void ShowInformacion()
         {
             Console.WriteLine(@$"
-            ----------Datos del paciente----------
+            ------------Datos del paciente------------
             Id: {Id}
             Nombre: {Name}
             Fecha de nacimiento: {BirthDate}
@@ -53,7 +54,7 @@ namespace FiltroCSharp_CamiloBarreneche.Models
             Peso en Kg: {WeightInKg}
             Estado de la Cría: {BreedingStatus}
             Temperamento: {Temperament}
-            Número del Microship: {MicrochipNumber}
+            Número del Microchip: {MicrochipNumber}
             Volumen de Ladrido: {BarkVolume}
             Tipo de Pelaje: {CoatType}
             ");
